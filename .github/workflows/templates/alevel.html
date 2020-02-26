@@ -1,0 +1,22 @@
+<title>is it A levels?</title>
+
+
+<body>
+
+<h1>{{headline}}</h1>
+{%if headline%}
+	<h1>A level day</h1>
+{%else%}
+	<h1>Heng ah!</h1>
+{%endif%}
+
+<h2>Hello everyone</h2>
+<ul>
+{%for name in namelist%}
+	<li>{{name}}</li>
+{%endfor%}
+
+</ul>
+<a href = "{{ url_for ('next')}}">click here to go next page</a>
+
+</body>

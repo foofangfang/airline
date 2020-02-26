@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %} Flights {% endblock %}
+
+
+{%block body%} <h1> Available Flights </h1>
+<ul>
+{% for flight in flights %}
+<li>
+{{flight[0]}}.{{flight[1]}} to {{flight[2]}}
+</li>
+{% endfor %}
+</ul>
+
+
+ <h1> Book a Flight 2 </h1>
+ <p> Select flight: </p>
+<form action ={{url_for('book')}} method="POST">
+<select name='flight_id'>
+	{% for flight in flights %}
+	<option value="{{flight[0]}}">
+	{{flight[0]}}.{{flight[1]}} to {{flight[2]}}
+	</option>
+	{% endfor %}
+</select> 
+<br>
+<br>
+<p>Enter your username: </p>
+<br><input type="text" name="name" placeholder="Passenger Name">
+<br>
+<br>
+
+<br><button type="submit"> Book Flight</button>
+
+
+
+
+
+</form>
+{% endblock %}
