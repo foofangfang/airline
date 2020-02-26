@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %} Flight Details {% endblock %}
+
+
+{%block body%} <h1> Flight Details</h1>
+
+<ul>
+{% for data in all_data %}
+<a href= 
+"{{ url_for('check1',flight_id=data[0])}}">
+	<li> {{data[1]}} to {{data[2]}} </li>
+</a>
+{% endfor %}
+</ul>
+
+
+{% endblock %}

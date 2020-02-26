@@ -1,0 +1,24 @@
+{%extends "layout.html"%}
+
+<title>Next page</title>
+
+
+
+
+This is the next page
+
+{%block heading%}
+
+This is page 2
+
+
+{%endblock%}
+
+
+{%block body%}
+
+
+<a href = "{{ url_for ('index')}}">click here to go back</a>
+
+{%endblock%}
+
